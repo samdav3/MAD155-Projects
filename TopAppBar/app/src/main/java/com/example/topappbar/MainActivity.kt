@@ -10,14 +10,15 @@ import android.view.MenuItem
 
 class MainActivity : AppCompatActivity() {
 
-    private var contact: MenuItem = findViewById(R.id.contact)
-    private var gallery: MenuItem = findViewById(R.id.gallery)
-    private var profile: MenuItem = findViewById(R.id.profile)
+    //private lateinit var contact: MenuItem
+    //private lateinit var gallery: MenuItem
+    //private lateinit var profile: MenuItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.topToolBar))
+        //setSupportActionBar(findViewById(R.id.topToolBar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
     }
@@ -26,35 +27,38 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.app_bar_menu, menu)
+        //contact = findViewById(R.id.contact)
+        //gallery = findViewById(R.id.gallery)
+        //profile = findViewById(R.id.profile)
         return true
     }
 
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
             R.id.contact -> {
-                contact.setOnMenuItemClickListener {
-                    val intent = Intent (this, ContactUs::class.java)
-                    startActivity(intent)
-                    true
-                }
+               // contact.setOnMenuItemClickListener {
+               //     val intent = Intent (this, ContactUs::class.java)
+               //     startActivity(intent)
+               //    true
+               // }
                 true
             }
 
             R.id.gallery -> {
-                gallery.setOnMenuItemClickListener {
-                    val intent = Intent (this, Gallery::class.java)
-                    startActivity(intent)
-                    true
-                }
+               // gallery.setOnMenuItemClickListener {
+               //     val intent = Intent (this, Gallery::class.java)
+               //     startActivity(intent)
+              //      true
+               // }
                 true
             }
 
             R.id.profile -> {
-                profile.setOnMenuItemClickListener {
-                    val intent = Intent (this, Profile::class.java)
-                    startActivity(intent)
-                    true
-                }
+                //profile.setOnMenuItemClickListener {
+                //    val intent = Intent (this, Profile::class.java)
+                //    startActivity(intent)
+                //    true
+               // }
                 true
             }
 
