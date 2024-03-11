@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MyMotionApp2</string>
+    <string name="magic">Magic</string>
+    <string name="zoom_out">Zoom Out</string>
+    <string name="zoom_in">Zoom In</string>
+</resources>
