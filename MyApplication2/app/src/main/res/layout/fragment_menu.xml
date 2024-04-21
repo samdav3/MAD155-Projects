@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.menu.MenuFragment">
+
+    <TextView
+        android:id="@+id/menuTitle"
+        android:layout_width="413dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/menu"
+        android:textAlignment="center"
+        android:textColor="#643200"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/cyoBtn"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuTitle"
+        app:srcCompat="@drawable/coffee_4334647_1280" />
+
+    <Button
+        android:id="@+id/cyoBtn"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginBottom="370dp"
+        android:background="#643200"
+        android:padding="10dp"
+        android:text="Create your Own"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/preMadeBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/preMadeBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/menuTitle"
+        app:srcCompat="@drawable/coffee_819362_1280" />
+
+    <Button
+        android:id="@+id/preMadeBtn"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="370dp"
+        android:background="#643200"
+        android:padding="10dp"
+        android:text="Pre-Made"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cyoBtn"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/beansBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cyoBtn"
+        app:srcCompat="@drawable/coffee_5447420_1280" />
+
+    <Button
+        android:id="@+id/beansBtn"
+        android:layout_width="148dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="136dp"
+        android:background="#643200"
+        android:padding="10dp"
+        android:text="Beans"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="#2A1500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

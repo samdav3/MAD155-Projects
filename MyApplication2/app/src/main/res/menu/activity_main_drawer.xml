@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="?attr/homeAsUpIndicator"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="?android:attr/fingerprintAuthDrawable"
+            android:title="@string/account" />
+        <item
+            android:id="@+id/nav_contact_us"
+            android:icon="@android:drawable/stat_sys_phone_call"
+            android:title="@string/contact_us" />
+        <item
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu" />
+        <item
+            android:id="@+id/nav_orderPageOneFragment"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="@string/start_order" />
+    </group>
+</menu>

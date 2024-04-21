@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.account.AccountFragment">
+
+    <TextView
+        android:id="@+id/accountTitle"
+        android:layout_width="413dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/account"
+        android:textAlignment="center"
+        android:textColor="#643200"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAccountInfo"
+        android:layout_width="215dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="226dp"
+        android:text="Account Information:"
+        android:textColor="#643200"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountTitle" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTextViewAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="19dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPayInfo"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayoutEditTextAccount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAccountInfo"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:text="Email:"
+            android:textColor="#643200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="135dp" />
+
+        <TextView
+            android:id="@+id/textViewPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Password:"
+            android:textColor="#643200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="173dp" />
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Name:"
+            android:textColor="#643200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="209dp" />
+
+        <TextView
+            android:id="@+id/textViewPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:text="Phone:"
+            android:textColor="#643200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="245dp" />
+
+        <TextView
+            android:id="@+id/textViewAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:text="Address:"
+            android:textColor="#643200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="281dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEditTextAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="13dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutTextViewAccount"
+        app:layout_constraintTop_toBottomOf="@id/textViewAccountInfo">
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="text"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="121dp" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="text"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="159dp" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="text"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="195dp" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:hint="Phone"
+            android:inputType="text"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="231dp" />
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="text"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="267dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewPayInfo"
+        android:layout_width="215dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="226dp"
+        android:text="Payment Information:"
+        android:textColor="#643200"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutEditTextAccount" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTextViewPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayoutEditPay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewPayInfo">
+
+
+        <TextView
+            android:id="@+id/textViewCardName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="3dp"
+            android:text="Name on Card:"
+            android:textColor="#643200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="392dp" />
+
+        <TextView
+            android:id="@+id/textViewCardNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:padding="3dp"
+            android:text="Card Number:"
+            android:textColor="#643200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="428dp" />
+
+        <TextView
+            android:id="@+id/textViewExpiration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:padding="3dp"
+            android:text="Expiration:"
+            android:textColor="#643200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="500dp" />
+
+        <TextView
+            android:id="@+id/textViewCVV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:padding="3dp"
+            android:text="CVV:"
+            android:textColor="#643200"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="464dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEditPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="13dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/linearLayoutTextViewPay"
+        app:layout_constraintTop_toBottomOf="@id/textViewPayInfo">
+
+        <EditText
+            android:id="@+id/editTextCardName"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="text"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="378dp" />
+
+        <EditText
+            android:id="@+id/editTextCardNum"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:hint="XXXX-XXXX-XXXX-XXXX"
+            android:inputType="text"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="414dp" />
+
+        <EditText
+            android:id="@+id/editTextExpiration"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:hint="MM/YY"
+            android:inputType="text"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="450dp" />
+
+
+        <EditText
+            android:id="@+id/editTextCVV"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:hint="XXX"
+            android:inputType="text"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="486dp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/accountOrdersBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="16dp"
+        android:background="#643200"
+        android:padding="10dp"
+        android:text="Order History"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/updateBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="16dp"
+        android:background="#643200"
+        android:padding="10dp"
+        android:text="Update"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/accountOrdersBtn" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        app:backgroundTint="#2A1500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_orderPageOneFragment"
+            app:destination="@id/nav_orderPageOneFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_contact_us"
+            app:destination="@id/nav_contact_us" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.example.myapplication.ui.account.AccountFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_nav_account_to_orderHistoryFragment"
+            app:destination="@id/orderHistoryFragment" />
+        <action
+            android:id="@+id/action_nav_account_to_nav_orderPageOneFragment"
+            app:destination="@id/nav_orderPageOneFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_menu"
+        android:name="com.example.myapplication.ui.menu.MenuFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_nav_menu_to_beansFragment"
+            app:destination="@id/beansFragment" />
+        <action
+            android:id="@+id/action_nav_menu_to_CYOFragment"
+            app:destination="@id/CYOFragment" />
+        <action
+            android:id="@+id/action_nav_menu_to_preMadeFragment"
+            app:destination="@id/preMadeFragment" />
+        <action
+            android:id="@+id/action_nav_menu_to_nav_orderPageOneFragment"
+            app:destination="@id/nav_orderPageOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/beansFragment"
+        android:name="com.example.myapplication.ui.menu.BeansFragment"
+        android:label="fragment_beans"
+        tools:layout="@layout/fragment_beans" >
+        <action
+            android:id="@+id/action_beansFragment_to_nav_menu"
+            app:destination="@id/nav_menu" />
+        <action
+            android:id="@+id/action_beansFragment_to_nav_orderPageOneFragment"
+            app:destination="@id/nav_orderPageOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CYOFragment"
+        android:name="com.example.myapplication.ui.menu.CYOFragment"
+        android:label="fragment_c_y_o"
+        tools:layout="@layout/fragment_c_y_o" >
+        <action
+            android:id="@+id/action_CYOFragment_to_nav_menu"
+            app:destination="@id/nav_menu" />
+        <action
+            android:id="@+id/action_CYOFragment_to_nav_orderPageOneFragment"
+            app:destination="@id/nav_orderPageOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/preMadeFragment"
+        android:name="com.example.myapplication.ui.menu.PreMadeFragment"
+        android:label="fragment_pre_made"
+        tools:layout="@layout/fragment_pre_made" >
+        <action
+            android:id="@+id/action_preMadeFragment_to_nav_menu"
+            app:destination="@id/nav_menu" />
+        <action
+            android:id="@+id/action_preMadeFragment_to_nav_orderPageOneFragment"
+            app:destination="@id/nav_orderPageOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_contact_us"
+        android:name="com.example.myapplication.ui.contact.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" >
+        <action
+            android:id="@+id/action_nav_contact_us_to_nav_orderPageOneFragment"
+            app:destination="@id/nav_orderPageOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_orderPageOneFragment"
+        android:name="com.example.myapplication.ui.order.OrderPageOneFragment"
+        android:label="fragment_order_page_one"
+        tools:layout="@layout/fragment_order_page_one" >
+        <action
+            android:id="@+id/action_orderPageOneFragment_to_orderPageTwoFragment"
+            app:destination="@id/orderPageTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderPageTwoFragment"
+        android:name="com.example.myapplication.ui.order.OrderPageTwoFragment"
+        android:label="fragment_order_page_two"
+        tools:layout="@layout/fragment_order_page_two" >
+        <action
+            android:id="@+id/action_orderPageTwoFragment_to_orderPageOneFragment"
+            app:destination="@id/nav_orderPageOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderHistoryFragment"
+        android:name="com.example.myapplication.ui.account.OrderHistoryFragment"
+        android:label="fragment_order_history"
+        tools:layout="@layout/fragment_order_history" >
+        <action
+            android:id="@+id/action_orderHistoryFragment_to_nav_account"
+            app:destination="@id/nav_account" />
+        <action
+            android:id="@+id/action_orderHistoryFragment_to_nav_orderPageOneFragment"
+            app:destination="@id/nav_orderPageOneFragment" />
+    </fragment>
+</navigation>

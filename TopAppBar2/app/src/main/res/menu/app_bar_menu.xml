@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <item
+        android:id="@+id/contact"
+        android:contentDescription="@string/contact_us"
+        android:title="@string/contact_us"
+        app:actionViewClass="androidx.constraintlayout.widget.ConstraintLayout"
+        android:actionLayout="@layout/activity_contact_us"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/profile"
+        android:contentDescription="@string/profile"
+        android:title="@string/profile"
+        app:actionViewClass="androidx.constraintlayout.widget.ConstraintLayout"
+        android:actionLayout="@layout/activity_profile"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/gallery"
+        android:contentDescription="@string/gallery"
+        android:title="@string/gallery"
+        app:actionViewClass="androidx.constraintlayout.widget.ConstraintLayout"
+        android:actionLayout="@layout/activity_gallery"
+        android:enabled="true"
+        />
+</menu>

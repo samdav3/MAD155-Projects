@@ -1,0 +1,23 @@
+[
+  {
+    "geometry": {
+      "location": {
+        "lat": 42.24204,
+        "lng": -88.24126
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 42.24404,
+          "lng": -88.24026
+        },
+        "southwest": {
+          "lat": 42.24104,
+          "lng": -88.24226
+        }
+      },
+      "name": "Home",
+      "rating": 4.2,
+      "vicinity": "1 Hickory Rd, Oakwood Hills"
+    }
+  }
+]
