@@ -13,15 +13,12 @@
         <action
             android:id="@+id/action_nav_home_to_orderPageOneFragment"
             app:destination="@id/nav_orderPageOneFragment" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_contact_us"
-            app:destination="@id/nav_contact_us" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_account"
         android:name="com.example.myapplication.ui.account.AccountFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/account"
         tools:layout="@layout/fragment_account" >
         <action
             android:id="@+id/action_nav_account_to_orderHistoryFragment"
@@ -34,7 +31,7 @@
     <fragment
         android:id="@+id/nav_menu"
         android:name="com.example.myapplication.ui.menu.MenuFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu"
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_nav_menu_to_beansFragment"
@@ -52,7 +49,7 @@
     <fragment
         android:id="@+id/beansFragment"
         android:name="com.example.myapplication.ui.menu.BeansFragment"
-        android:label="fragment_beans"
+        android:label="Beans"
         tools:layout="@layout/fragment_beans" >
         <action
             android:id="@+id/action_beansFragment_to_nav_menu"
@@ -64,7 +61,7 @@
     <fragment
         android:id="@+id/CYOFragment"
         android:name="com.example.myapplication.ui.menu.CYOFragment"
-        android:label="fragment_c_y_o"
+        android:label="Create Your Own"
         tools:layout="@layout/fragment_c_y_o" >
         <action
             android:id="@+id/action_CYOFragment_to_nav_menu"
@@ -76,7 +73,7 @@
     <fragment
         android:id="@+id/preMadeFragment"
         android:name="com.example.myapplication.ui.menu.PreMadeFragment"
-        android:label="fragment_pre_made"
+        android:label="Pre-Made"
         tools:layout="@layout/fragment_pre_made" >
         <action
             android:id="@+id/action_preMadeFragment_to_nav_menu"
@@ -88,7 +85,7 @@
     <fragment
         android:id="@+id/nav_contact_us"
         android:name="com.example.myapplication.ui.contact.ContactUsFragment"
-        android:label="fragment_contact_us"
+        android:label="Contact Us"
         tools:layout="@layout/fragment_contact_us" >
         <action
             android:id="@+id/action_nav_contact_us_to_nav_orderPageOneFragment"
@@ -97,7 +94,7 @@
     <fragment
         android:id="@+id/nav_orderPageOneFragment"
         android:name="com.example.myapplication.ui.order.OrderPageOneFragment"
-        android:label="fragment_order_page_one"
+        android:label="Order"
         tools:layout="@layout/fragment_order_page_one" >
         <action
             android:id="@+id/action_orderPageOneFragment_to_orderPageTwoFragment"
@@ -106,7 +103,7 @@
     <fragment
         android:id="@+id/orderPageTwoFragment"
         android:name="com.example.myapplication.ui.order.OrderPageTwoFragment"
-        android:label="fragment_order_page_two"
+        android:label="Order"
         tools:layout="@layout/fragment_order_page_two" >
         <action
             android:id="@+id/action_orderPageTwoFragment_to_orderPageOneFragment"
@@ -115,7 +112,7 @@
     <fragment
         android:id="@+id/orderHistoryFragment"
         android:name="com.example.myapplication.ui.account.OrderHistoryFragment"
-        android:label="fragment_order_history"
+        android:label="Order History"
         tools:layout="@layout/fragment_order_history" >
         <action
             android:id="@+id/action_orderHistoryFragment_to_nav_account"
@@ -124,4 +121,9 @@
             android:id="@+id/action_orderHistoryFragment_to_nav_orderPageOneFragment"
             app:destination="@id/nav_orderPageOneFragment" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.example.myapplication.MainActivity"
+        android:label="app_bar_main"
+        tools:layout="@layout/app_bar_main" />
 </navigation>

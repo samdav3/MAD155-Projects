@@ -23,16 +23,11 @@ class OrderPageOneFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val fab = R.id.fab
         val viewModel = ViewModelProvider(this).get(OrderPageOneViewModel::class.java)
 
         _binding = FragmentOrderPageOneBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val textView: TextView = binding.menuTitle
-//        slideshowViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
         val submitBtn = binding.submitBtn
         submitBtn.setOnClickListener {
             findNavController().navigate(R.id.action_orderPageOneFragment_to_orderPageTwoFragment)
