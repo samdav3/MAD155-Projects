@@ -31,15 +31,15 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-//        binding.appBarMain.fab.setOnClickListener { view ->
-//            val someFragment: Fragment = R.id.accountOrdersBtn
-//            val transaction: FragmentTransaction = fragmentManager.beginTransaction()
-//            transaction.replace(
-//                R.id.nav_host_fragment_content_main,
-//                someFragment
-//            )
-//            transaction.commit()
-//        }
+        binding.appBarMain.fab.setOnClickListener { view ->
+            val someFragment: Fragment = R.id.
+            val transaction: FragmentTransaction = fragmentManager.beginTransaction()
+            transaction.replace(
+                R.id.nav_host_fragment_content_main,
+                someFragment
+            )
+            transaction.commit()
+        }
 
 //        binding.appBarMain.fab.setOnClickListener {
 //            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.action_nav_home_to_orderPageOneFragment)
