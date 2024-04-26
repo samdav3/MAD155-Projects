@@ -32,10 +32,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val fab = binding.fab
-//        fab.setOnClickListener {
-//            findNavController().navigate(R.id.action_nav_home_to_orderPageOneFragment)
-//        }
 
         return root
     }

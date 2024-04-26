@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "893136416593",
+    "project_id": "davcalbeanscok",
+    "storage_bucket": "davcalbeanscok.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893136416593:android:4f229a3dd6af739cbe2d70",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLFJgtABaAiVAsRkjZ9GJy5HbCOydvIDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
