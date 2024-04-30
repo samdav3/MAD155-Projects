@@ -26,6 +26,25 @@
         <action
             android:id="@+id/action_nav_account_to_nav_orderPageOneFragment"
             app:destination="@id/nav_orderPageOneFragment" />
+        <argument
+            android:name="email" />
+        <argument
+            android:name="password" />
+        <argument
+            android:name="name" />
+        <argument
+            android:name="phone" />
+        <argument
+            android:name="address" />
+        <argument
+            android:name="cardNum" />
+        <argument
+            android:name="cardExp" />
+        <argument
+            android:name="cardCVV" />
+        <action
+            android:id="@+id/action_nav_account_to_nav_login"
+            app:destination="@id/nav_login" />
     </fragment>
 
     <fragment
@@ -133,6 +152,41 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_nav_account"
+            app:destination="@id/nav_account" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="password"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="phone"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="address"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="cardNum"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="cardExp"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="cardCVV"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_nav_login_to_nav_account2"
             app:destination="@id/nav_account" />
     </fragment>
 </navigation>

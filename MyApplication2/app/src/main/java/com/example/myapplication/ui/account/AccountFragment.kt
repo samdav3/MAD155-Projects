@@ -1,6 +1,7 @@
 package com.example.myapplication.ui.account
 
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +10,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentAccountBinding
 import com.google.firebase.Firebase
@@ -22,6 +27,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
 import com.google.firebase.database.getValue
 import com.google.firebase.database.ktx.database
+import org.w3c.dom.Text
 
 class AccountFragment : Fragment() {
 
@@ -95,6 +101,33 @@ class AccountFragment : Fragment() {
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+
+        // RECEIVE LOGIN USER DATA
+        val args: AccountFragmentArgs by navArgs<AccountFragmentArgs>()
+
+        newUserEmail = binding.editTextEmail
+        newUserPass = binding.editTextPassword
+        newUserName = binding.editTextName
+        newUserPhone = binding.editTextPhone
+        newUserAddress = binding.editTextAddress
+        newUserCardNum = binding.editTextCardNum
+        newUserCardExp = binding.editTextExpiration
+        newUserCardCVV = binding.editTextCVV
+
+        var emailArg = args.email
+        var passArg = args.password
+        var nameArg = args.name
+        var phoneArg = args.phone
+        var addressArg = args.address
+        var cardNumArg = args.cardNum
+        var cardExpArg = args.cardExp
+        var cardCVVArg = args.cardCVV
+
+        //newUserEmail.text = emailArg
+        //newUserPhone.text = phoneArg
+
+
+
         val orderHisBtn = binding.accountOrdersBtn
         orderHisBtn.setOnClickListener {
             findNavController().navigate(R.id.action_nav_account_to_orderHistoryFragment)
@@ -105,23 +138,15 @@ class AccountFragment : Fragment() {
         databaseRead.addValueEventListener(changeListener)
         userData = ArrayList()
 
-        // GET USER INPUT DATA
-        newUserEmail = binding.editTextEmail
-        newUserPass = binding.editTextPassword
-        newUserName = binding.editTextName
-        newUserPhone = binding.editTextPhone
-        newUserAddress = binding.editTextAddress
-        newUserCardNum = binding.editTextCardNum
-        newUserCardExp = binding.editTextExpiration
-        newUserCardCVV = binding.editTextCVV
-        updateBtn = binding.updateBtn
 
+
+        updateBtn = binding.updateBtn
         updateBtn.setOnClickListener {
             val newUserData = AccountModel("", "", "", "", "", "", "", "")
             newUserData.email = newUserEmail.text.toString()
             newUserData.password = newUserPass.text.toString()
             newUserData.name = newUserName.text.toString()
-            newUserData.phone = newUserPhone.text.toString()
+            newUserData.phone = newUserPhone.toString()
             newUserData.address = newUserAddress.text.toString()
             newUserData.cardNum = newUserCardNum.text.toString()
             newUserData.cardExp = newUserCardExp.text.toString()
