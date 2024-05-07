@@ -31,6 +31,8 @@ import org.w3c.dom.Text
 
 class AccountFragment : Fragment() {
 
+    private lateinit var userPhone: String
+
     //READING DATA IN
     private lateinit var newUserEmail: EditText
     private lateinit var newUserPass: EditText
@@ -40,8 +42,14 @@ class AccountFragment : Fragment() {
     private lateinit var newUserCardNum: EditText
     private lateinit var newUserCardExp: EditText
     private lateinit var newUserCardCVV: EditText
+    private lateinit var newUserCardName: EditText
     private lateinit var updateBtn: Button
     lateinit var userData: ArrayList<AccountModel>
+
+    //PASS DATA
+    val accountArgs: AccountFragmentArgs by navArgs<AccountFragmentArgs>()
+
+
 
     // DATABASES
     private lateinit var databaseWrite: DatabaseReference
@@ -54,6 +62,7 @@ class AccountFragment : Fragment() {
     private lateinit var userCardNumData: String
     private lateinit var userCardExpData: String
     private lateinit var userCardCVVData: String
+    private lateinit var userCardNameData: String
 
     val changeListener: ValueEventListener = object : ValueEventListener {
         // GET AND HOLD DATA
@@ -76,6 +85,7 @@ class AccountFragment : Fragment() {
                     userCardNumData = getData?.cardNum.toString()
                     userCardExpData = getData?.cardExp.toString()
                     userCardCVVData = getData?.cardCVV.toString()
+                    userCardNameData = getData?.cardName.toString()
                     Log.i("child", "child.key")
                     Log.i("value", child.value.toString())
                 }
@@ -100,10 +110,23 @@ class AccountFragment : Fragment() {
             ViewModelProvider(this).get(AccountViewModel::class.java)
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        userPhone = accountArgs.phone
 
+
+        val orderHisBtn = binding.accountOrdersBtn
+        orderHisBtn.setOnClickListener {
+            userPhone = accountArgs.phone
+            val passData = AccountFragmentDirections.actionNavAccountToOrderHistoryFragment(userPhone)
+            findNavController().navigate(passData)
+        }
+
+        // READ DATA
+        databaseRead = Firebase.database.getReference("/users")
+        databaseRead.addValueEventListener(changeListener)
+        userData = ArrayList()
 
         // RECEIVE LOGIN USER DATA
-        val args: AccountFragmentArgs by navArgs<AccountFragmentArgs>()
+
 
         newUserEmail = binding.editTextEmail
         newUserPass = binding.editTextPassword
@@ -113,54 +136,49 @@ class AccountFragment : Fragment() {
         newUserCardNum = binding.editTextCardNum
         newUserCardExp = binding.editTextExpiration
         newUserCardCVV = binding.editTextCVV
+        newUserCardName = binding.editTextCardName
 
-        var emailArg = args.email
-        var passArg = args.password
-        var nameArg = args.name
-        var phoneArg = args.phone
-        var addressArg = args.address
-        var cardNumArg = args.cardNum
-        var cardExpArg = args.cardExp
-        var cardCVVArg = args.cardCVV
-
-        //newUserEmail.text = emailArg
-        //newUserPhone.text = phoneArg
-
+        val emailArg = accountArgs.email
+        val passArg = accountArgs.password
+        val nameArg = accountArgs.name
+        val phoneArg = accountArgs.phone
+        val addressArg = accountArgs.address
+        val cardNumArg = accountArgs.cardNum
+        val cardExpArg = accountArgs.cardExp
+        val cardCVVArg = accountArgs.cardCVV
+        val cardNameArg = accountArgs.cardName
 
 
-        val orderHisBtn = binding.accountOrdersBtn
-        orderHisBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_nav_account_to_orderHistoryFragment)
-        }
+        (newUserEmail as TextView).text = emailArg
+        (newUserPass as TextView).text = passArg
+        (newUserPhone as TextView).text = phoneArg
+        (newUserName as TextView).text = nameArg
+        (newUserAddress as TextView).text = addressArg
+        (newUserCardNum as TextView).text = cardNumArg
+        (newUserCardExp as TextView).text = cardExpArg
+        (newUserCardCVV as TextView).text = cardCVVArg
+        (newUserCardName as TextView).text = cardNameArg
 
-        // READ DATA
-        databaseRead = Firebase.database.getReference("/users")
-        databaseRead.addValueEventListener(changeListener)
-        userData = ArrayList()
 
-
-
+        databaseWrite = Firebase.database.reference
         updateBtn = binding.updateBtn
         updateBtn.setOnClickListener {
-            val newUserData = AccountModel("", "", "", "", "", "", "", "")
+
+            val newUserData = AccountModel("", "", "", "", "", "", "", "", "")
             newUserData.email = newUserEmail.text.toString()
             newUserData.password = newUserPass.text.toString()
             newUserData.name = newUserName.text.toString()
-            newUserData.phone = newUserPhone.toString()
+            newUserData.phone = newUserPhone.text.toString()
             newUserData.address = newUserAddress.text.toString()
             newUserData.cardNum = newUserCardNum.text.toString()
             newUserData.cardExp = newUserCardExp.text.toString()
             newUserData.cardCVV = newUserCardCVV.text.toString()
+            newUserData.cardName = newUserCardName.text.toString()
 
             // WRITE TO DATABASE
             databaseWrite.child("users").child(newUserData.phone.toString()).setValue(newUserData)
             Toast.makeText(context, "New Entry successfully added!", Toast.LENGTH_SHORT).show()
         }
-
-        databaseWrite = Firebase.database.reference
-
-
-
 
         return root
     }

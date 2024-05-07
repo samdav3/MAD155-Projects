@@ -7,19 +7,187 @@
     tools:context=".ui.menu.PreMadeFragment">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="356dp"
-        android:layout_marginEnd="137dp"
-        android:layout_marginBottom="356dp"
-        android:text="Pre Made By the best!"
+        android:id="@+id/textViewLatD"
+        android:layout_width="114dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="127dp"
+        android:text="A classic Latte with aLota your choice of Flavor"
+        android:textAlignment="center"
+        android:textSize="12sp"
         android:textColor="#643200"
-        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dasD"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dasD"
+        android:layout_width="114dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="127dp"
+        android:text="Extra strong Espresso with our signature roast"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textColor="#643200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/textViewLatD"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDasTitle" />
 
+    <TextView
+        android:id="@+id/pmTitle"
+        android:layout_width="413dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif"
+        android:text="Our Custom Creations"
+        android:textAlignment="center"
+        android:textColor="#643200"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imageViewCap"
+        android:layout_width="146dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/cappucino"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCCTitle"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewCB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pmTitle" />
+
+    <ImageView
+        android:id="@+id/imageViewCB"
+        android:layout_width="146dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="2dp"
+        android:src="@drawable/coldbrew"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSSTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewCap"
+        app:layout_constraintTop_toBottomOf="@+id/pmTitle" />
+
+    <ImageView
+        android:id="@+id/imageViewLat"
+        android:layout_width="146dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="26dp"
+        android:src="@drawable/latte"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLatTitle"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewEsp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCCD" />
+
+    <ImageView
+        android:id="@+id/imageViewEsp"
+        android:layout_width="146dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginEnd="26dp"
+        android:src="@drawable/espresso"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDasTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLat"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSSD" />
+
+    <TextView
+        android:id="@+id/textViewCCTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="3dp"
+        android:text="Cals Cappucino"
+        android:textColor="#643200"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCCD"
+        app:layout_constraintEnd_toStartOf="@+id/textViewSSTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewCap" />
+
+    <TextView
+        android:id="@+id/textViewSSTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="42dp"
+        android:text="Salty Sweet Brew"
+        android:textColor="#643200"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSSD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewCCTitle"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewCB" />
+
+    <TextView
+        android:id="@+id/textViewLatTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="9dp"
+        android:text="Lota Latte"
+        android:textColor="#643200"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLatD"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewEsp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLat" />
+
+    <TextView
+        android:id="@+id/textViewDasTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="6dp"
+        android:text="Daspresso"
+        android:textColor="#643200"
+        app:layout_constraintBottom_toTopOf="@+id/dasD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLatTitle"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewEsp" />
+
+    <TextView
+        android:id="@+id/textViewCCD"
+        android:layout_width="114dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="83dp"
+        android:text="A classic Cappucino with your choice of design!"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textColor="#643200"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewLat"
+        app:layout_constraintEnd_toStartOf="@+id/textViewSSD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCCTitle" />
+
+    <TextView
+        android:id="@+id/textViewSSD"
+        android:layout_width="120dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="53dp"
+        android:text="A salty sweet combination of Sea Salt and Caramel in our signature Cold Brew"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textColor="#643200"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewEsp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewCCD"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSSTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

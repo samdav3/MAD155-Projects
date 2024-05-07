@@ -23,9 +23,6 @@
         <action
             android:id="@+id/action_nav_account_to_orderHistoryFragment"
             app:destination="@id/nav_orderHistoryFragment" />
-        <action
-            android:id="@+id/action_nav_account_to_nav_orderPageOneFragment"
-            app:destination="@id/nav_orderPageOneFragment" />
         <argument
             android:name="email" />
         <argument
@@ -45,6 +42,7 @@
         <action
             android:id="@+id/action_nav_account_to_nav_login"
             app:destination="@id/nav_login" />
+        <argument android:name="cardName" />
     </fragment>
 
     <fragment
@@ -118,6 +116,7 @@
         <action
             android:id="@+id/action_orderPageOneFragment_to_orderPageTwoFragment"
             app:destination="@id/nav_orderPageTwoFragment" />
+        <argument android:name="userPhone" />
     </fragment>
     <fragment
         android:id="@+id/nav_orderPageTwoFragment"
@@ -127,6 +126,14 @@
         <action
             android:id="@+id/action_orderPageTwoFragment_to_orderPageOneFragment"
             app:destination="@id/nav_orderPageOneFragment" />
+        <argument android:name="orderDate" />
+        <argument android:name="size" />
+        <argument android:name="coffee" />
+        <argument android:name="cream" />
+        <argument android:name="flavor" />
+        <action
+            android:id="@+id/action_nav_orderPageTwoFragment_to_saveOrderLoginFragment"
+            app:destination="@id/saveOrderLoginFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_orderHistoryFragment"
@@ -139,6 +146,7 @@
         <action
             android:id="@+id/action_orderHistoryFragment_to_nav_orderPageOneFragment"
             app:destination="@id/nav_orderPageOneFragment" />
+        <argument android:name="userPhone" />
     </fragment>
     <activity
         android:id="@+id/mainActivity2"
@@ -151,42 +159,21 @@
         android:label="Account"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_nav_account"
-            app:destination="@id/nav_account" />
-        <argument
-            android:name="email"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="password"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="name"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="phone"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="address"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="cardNum"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="cardExp"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="cardCVV"
-            app:argType="string"
-            app:nullable="true" />
-        <action
             android:id="@+id/action_nav_login_to_nav_account2"
             app:destination="@id/nav_account" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveOrderLoginFragment"
+        android:name="com.example.myapplication.ui.order.SaveOrderLoginFragment"
+        android:label="fragment_save_order_login"
+        tools:layout="@layout/fragment_save_order_login" >
+        <action
+            android:id="@+id/action_saveOrderLoginFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <argument android:name="date" />
+        <argument android:name="size" />
+        <argument android:name="coffee" />
+        <argument android:name="cream" />
+        <argument android:name="flavor" />
     </fragment>
 </navigation>

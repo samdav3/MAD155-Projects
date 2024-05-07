@@ -22,6 +22,7 @@ import com.example.myapplication.databinding.FragmentLoginBinding
 import com.example.myapplication.ui.account.AccountFragment
 import com.example.myapplication.ui.account.AccountModel
 import com.example.myapplication.ui.account.AccountViewModel
+import com.google.android.gms.tasks.Task
 import com.google.firebase.Firebase
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -30,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
 import com.google.firebase.database.getValue
+import com.google.firebase.database.snapshots
 import com.google.firebase.database.values
 
 
@@ -44,6 +46,7 @@ class LoginFragment : Fragment() {
     private lateinit var userCardNumData: String
     private lateinit var userCardExpData: String
     private lateinit var userCardCVVData: String
+    private lateinit var userCardNameData: String
     lateinit var userData: ArrayList<AccountModel>
     //private lateinit var snapshot: DataSnapshot
     private lateinit var accountViewModel: AccountViewModel
@@ -69,6 +72,7 @@ class LoginFragment : Fragment() {
                     userCardNumData = getData?.cardNum.toString()
                     userCardExpData = getData?.cardExp.toString()
                     userCardCVVData = getData?.cardCVV.toString()
+                    userCardNameData = getData?.cardName.toString()
                     Log.i("child", "child.key")
                     Log.i("value", child.value.toString())
                 }
@@ -112,15 +116,17 @@ class LoginFragment : Fragment() {
             userCardNumData = ""
             userCardExpData = ""
             userCardCVVData = ""
+            userCardNameData = ""
             // PASS LOGIN USER DATA (which is none)
-            val userPassData = LoginFragmentDirections.actionLoginFragmentToNavAccount(userEmailData,
+            val userPassData = LoginFragmentDirections.actionNavLoginToNavAccount2(userEmailData,
                 userPassData,
                 userNameData,
                 userPhoneData,
                 userAddressData,
                 userCardNumData,
                 userCardExpData,
-                userCardCVVData)
+                userCardCVVData,
+                userCardNameData)
             // NAVIGATE TO ACCOUNT FRAGMENT WITH USER DATA (IF EXISTS)
             findNavController().navigate(userPassData)
         }
@@ -130,38 +136,45 @@ class LoginFragment : Fragment() {
             // CHECK IF DOCUMENT EXISTS
             userPhoneData = binding.editTextLoginPhone.text.toString()
             val getUser = databaseRead.child(userPhoneData).get()
-            getUser.addOnCompleteListener {
-                databaseRead.orderByKey()
-                if (getUser.result.exists()) {
-                    //userData.apply {
-                        databaseRead = firebaseDatabase.getReference("/users").child(userPhoneData)
-                        userEmailData = databaseRead.child("/email").toString()
-                        userPassData = databaseRead.child("/password").toString()
-                        userNameData = databaseRead.child("/name").toString()
-//                        userPhoneData = userPhoneData
-                        userAddressData = databaseRead.child("/address").toString()
-                        userCardNumData = databaseRead.child("/cardNum").toString()
-                        userCardExpData = databaseRead.child("/cardExp").toString()
-                        userCardCVVData = databaseRead.child("/cardCVV").toString()
+            getUser.addOnCompleteListener{
+                val result = getUser.result
+
+                if (result.exists()) {
+
+                    val email = getUser.result.child("email").value
+                    val pass = getUser.result.child("password").value
+                    val name = getUser.result.child("name").value
+                    //val phone = getUser.result.child("phone").value
+                    val address = getUser.result.child("address").value
+                    val cardNum = getUser.result.child("cardNum").value
+                    val cardExp = getUser.result.child("cardExp").value
+                    val cardCVV = getUser.result.child("cardCVV").value
+                    val cardName = getUser.result.child("cardName").value
+
+                    userEmailData = email.toString()
+                    userPassData = pass.toString()
+                    userNameData = name.toString()
+                    //userPhoneData = phone.toString()
+                    userAddressData = address.toString()
+                    userCardNumData = cardNum.toString()
+                    userCardExpData = cardExp.toString()
+                    userCardCVVData = cardCVV.toString()
+                    userCardNameData = cardName.toString()
                     //}
 
                     // PASS LOGIN USER DATA
-                    val userPassData = LoginFragmentDirections.actionLoginFragmentToNavAccount(userEmailData,
-                                                                                                userPassData,
-                                                                                                userNameData,
-                                                                                                userPhoneData,
-                                                                                                userAddressData,
-                                                                                                userCardNumData,
-                                                                                                userCardExpData,
-                                                                                                userCardCVVData)
+                    val userPassData = LoginFragmentDirections.actionNavLoginToNavAccount2(userEmailData,
+                        userPassData, userNameData, userPhoneData, userAddressData, userCardNumData, userCardExpData,
+                        userCardCVVData, userCardNameData)
                     // NAVIGATE TO ACCOUNT FRAGMENT WITH USER DATA (IF EXISTS)
+
                     findNavController().navigate(userPassData)
 
-                }else{
+                }
+                else{
                     Toast.makeText(context, "User not Found", Toast.LENGTH_LONG).show()
                 }
             }
-
 
 
         }
