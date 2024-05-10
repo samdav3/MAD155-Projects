@@ -28,7 +28,9 @@
         android:layout_marginBottom="12dp"
         android:src="@drawable/coffee_2732109_1280"
         app:layout_constraintBottom_toTopOf="@+id/imageViewBM"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewC" />
 
     <ImageView
         android:id="@+id/imageViewBM"
@@ -38,16 +40,18 @@
         android:layout_marginBottom="144dp"
         android:src="@drawable/coffee_sack_2296123_1280"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewBM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewB" />
 
     <TextView
         android:id="@+id/textViewB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="118dp"
         android:layout_marginEnd="76dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="111dp"
         android:text="Brazilian Beans"
         android:textColor="#643200"
         android:textSize="16dp"
@@ -62,11 +66,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="112dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="208dp"
         android:text="Blue Mountain Beans"
         android:textColor="#643200"
         android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toEndOf="@+id/imageViewBM"
@@ -77,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="133dp"
         android:layout_marginEnd="60dp"
         android:text="Colombian Beans"
         android:textColor="#643200"

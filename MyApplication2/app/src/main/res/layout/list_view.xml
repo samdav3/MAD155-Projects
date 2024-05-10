@@ -21,14 +21,14 @@
 
         <TextView
             android:id="@+id/orderInfo"
-            android:layout_width="wrap_content"
+            android:layout_width="296dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@+id/orderDate"
             android:hint="Order Contents"
-            android:textSize="14dp"
-            android:textColor="#643200"/>
+            android:textColor="#643200"
+            android:textSize="14dp" />
 
 
 

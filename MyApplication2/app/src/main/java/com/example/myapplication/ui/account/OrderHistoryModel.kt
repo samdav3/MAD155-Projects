@@ -5,6 +5,5 @@ class OrderHistoryModel(
     var size: String? = "",
     var coffee: String? = "",
     var cream: String? = "",
-    var flavor: String? = "",
-    var phone: String? = ""
+    var flavor: String? = ""
 ) { }

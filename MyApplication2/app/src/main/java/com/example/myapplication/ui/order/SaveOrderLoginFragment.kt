@@ -55,7 +55,6 @@ class SaveOrderLoginFragment : Fragment() {
                 for (child in snapshot.children) {
                     val getData = child.getValue<OrderHistoryModel>()
                     // GET USER DATA HERE
-                    date = getData?.date.toString()
                     size = getData?.size.toString()
                     coffee = getData?.coffee.toString()
                     cream = getData?.cream.toString()
@@ -103,15 +102,15 @@ class SaveOrderLoginFragment : Fragment() {
                 val result = getUser.result
                 if (result.exists()){
                     //userOrderDoc.addOnCompleteListener {
-                        val orderData = OrderHistoryModel("", "", "", "", "", "")
+                        val orderData = OrderHistoryModel("", "", "", "", "")
                         orderData.date = date
                         orderData.size = size
                         orderData.coffee = coffee
                         orderData.cream = cream
                         orderData.flavor = flavor
-                        orderData.phone = phoneNum
-                        databaseWrite.child("/orders").child(orderData.phone.toString()).setValue(orderData)
+                        databaseWrite.child("/users").child(phoneNum).child("orders").child(date).setValue(orderData)
                         Toast.makeText(context, "Order saved to $phoneNum", Toast.LENGTH_LONG).show()
+
                     //}
                 }
                 else{

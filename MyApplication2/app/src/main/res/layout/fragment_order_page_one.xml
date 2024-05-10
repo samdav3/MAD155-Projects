@@ -29,7 +29,7 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="19dp"
         android:ems="10"
-        android:hint="Pickup Date"
+        android:hint="MM-DD-YYY"
         android:inputType="date"
         android:textColor="#643200"
         app:layout_constraintEnd_toEndOf="parent"
@@ -334,7 +334,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCoffeeTitle">>
+        app:layout_constraintTop_toBottomOf="@+id/textViewCoffeeTitle">
 
         <RadioButton
             android:id="@+id/chipAmericano"
@@ -392,8 +392,6 @@
 
 
     </RadioGroup>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

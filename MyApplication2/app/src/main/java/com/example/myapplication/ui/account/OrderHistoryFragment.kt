@@ -18,6 +18,7 @@ import com.example.myapplication.databinding.FragmentAccountBinding
 import com.example.myapplication.databinding.FragmentOrderHistoryBinding
 import com.google.firebase.Firebase
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.core.Context
 import com.google.firebase.database.database
 
@@ -27,7 +28,7 @@ class OrderHistoryFragment : Fragment() {
     private lateinit var databaseRead: DatabaseReference
     val orderHisArgs: OrderHistoryFragmentArgs by navArgs<OrderHistoryFragmentArgs>()
     lateinit var recyclerView: RecyclerView
-    lateinit var gridLayoutManager: GridLayoutManager
+    lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var arrayList: ArrayList<OrderHistoryModel>
     lateinit var thisAdapter: AccountAdapter
 
@@ -47,9 +48,9 @@ class OrderHistoryFragment : Fragment() {
 
         //setup what this looks like
         recyclerView = binding.recyclerView
-        gridLayoutManager = GridLayoutManager(context, 2,
+        linearLayoutManager = LinearLayoutManager(context,
             LinearLayoutManager.VERTICAL, false)
-        recyclerView.layoutManager = gridLayoutManager
+        recyclerView.layoutManager = linearLayoutManager
         recyclerView.setHasFixedSize(true)
 
         //all about data
@@ -58,23 +59,30 @@ class OrderHistoryFragment : Fragment() {
         recyclerView.adapter = thisAdapter
 
 
-
+//        root.removeView()
         return root
     }
 
     private fun setupData(): ArrayList<OrderHistoryModel>{
-        var items: ArrayList<OrderHistoryModel> = ArrayList()
+        val items: ArrayList<OrderHistoryModel> = ArrayList()
+        //val date = Firebase.database.reference.child("/users").child(userPhone).child("/orders").get()
+        val firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseRead = firebaseDatabase.getReference("/users")
+        val getUser = databaseRead.child(userPhone).child("/orders").get()
 
-        val getUser = Firebase.database.reference.child("/orders").child(userPhone).get()
-        val result = getUser.result
         getUser.addOnCompleteListener{
-            if (result.exists()){
+            val document = getUser.result.value
 
-                    val date = getUser.result.child("date").value
-                    val size = getUser.result.child("size").value
-                    val coffee = getUser.result.child("coffee").value
-                    val cream = getUser.result.child("cream").value
-                    val flavor = getUser.result.child("flavor").value
+
+            val result = getUser.result
+            if (result.exists()){
+                result.children
+                binding.textView.text = document.toString()
+                    val date = getUser.result.key
+                    val size = getUser.result.child(date.toString()).child("size").value
+                    val coffee = getUser.result.child(date.toString()).child("coffee").value
+                    val cream = getUser.result.child(date.toString()).child("cream").value
+                    val flavor = getUser.result.child(date.toString()).child("flavor").value
                 for (item in getUser.result.children) {
                     items.add(OrderHistoryModel(date.toString(), size.toString(), coffee.toString(), cream.toString(), flavor.toString()))
                 }

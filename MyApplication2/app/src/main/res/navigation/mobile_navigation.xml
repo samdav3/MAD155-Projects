@@ -165,8 +165,8 @@
     <fragment
         android:id="@+id/saveOrderLoginFragment"
         android:name="com.example.myapplication.ui.order.SaveOrderLoginFragment"
-        android:label="fragment_save_order_login"
-        tools:layout="@layout/fragment_save_order_login" >
+        android:label="Save Order"
+        tools:layout="@layout/fragment_save_order_login">
         <action
             android:id="@+id/action_saveOrderLoginFragment_to_nav_home"
             app:destination="@id/nav_home" />
