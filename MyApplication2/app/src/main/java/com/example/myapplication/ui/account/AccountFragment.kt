@@ -161,23 +161,46 @@ class AccountFragment : Fragment() {
 
 
         databaseWrite = Firebase.database.reference
+        val user = databaseRead.child("users").child(userPhone).child("orders").get()
+
         updateBtn = binding.updateBtn
         updateBtn.setOnClickListener {
+//            if (user.result.exists()){
+////                // UPDATE USER INFO BUT KEEP EXISTING ORDERS
+//                print("User Exists with Orders Saved.")
+//                val updateUserData = UpdateAccountModel("", "", "", "", "", "", "", "", "", "")
+//                updateUserData.email = newUserEmail.text.toString()
+//                updateUserData.password = newUserPass.text.toString()
+//                updateUserData.name = newUserName.text.toString()
+//                updateUserData.phone = newUserPhone.text.toString()
+//                updateUserData.address = newUserAddress.text.toString()
+//                updateUserData.cardNum = newUserCardNum.text.toString()
+//                updateUserData.cardExp = newUserCardExp.text.toString()
+//                updateUserData.cardCVV = newUserCardCVV.text.toString()
+//                updateUserData.cardName = newUserCardName.text.toString()
+//                updateUserData.orders = user.result.value.toString()
+//
+//                // WRITE TO DATABASE
+//                databaseWrite.child("users").child(updateUserData.phone.toString()).setValue(updateUserData)
+//                Toast.makeText(context, "User Info Updated", Toast.LENGTH_SHORT).show()
+//
+//            }else{
+                val newUserData = AccountModel("", "", "", "", "", "", "", "", "")
+                newUserData.email = newUserEmail.text.toString()
+                newUserData.password = newUserPass.text.toString()
+                newUserData.name = newUserName.text.toString()
+                newUserData.phone = newUserPhone.text.toString()
+                newUserData.address = newUserAddress.text.toString()
+                newUserData.cardNum = newUserCardNum.text.toString()
+                newUserData.cardExp = newUserCardExp.text.toString()
+                newUserData.cardCVV = newUserCardCVV.text.toString()
+                newUserData.cardName = newUserCardName.text.toString()
 
-            val newUserData = AccountModel("", "", "", "", "", "", "", "", "")
-            newUserData.email = newUserEmail.text.toString()
-            newUserData.password = newUserPass.text.toString()
-            newUserData.name = newUserName.text.toString()
-            newUserData.phone = newUserPhone.text.toString()
-            newUserData.address = newUserAddress.text.toString()
-            newUserData.cardNum = newUserCardNum.text.toString()
-            newUserData.cardExp = newUserCardExp.text.toString()
-            newUserData.cardCVV = newUserCardCVV.text.toString()
-            newUserData.cardName = newUserCardName.text.toString()
+                // WRITE TO DATABASE
+                databaseWrite.child("users").child(newUserData.phone.toString()).setValue(newUserData)
+                Toast.makeText(context, "User Info Updated", Toast.LENGTH_SHORT).show()
+           // }
 
-            // WRITE TO DATABASE
-            databaseWrite.child("users").child(newUserData.phone.toString()).setValue(newUserData)
-            Toast.makeText(context, "New Entry successfully added!", Toast.LENGTH_SHORT).show()
         }
 
         return root

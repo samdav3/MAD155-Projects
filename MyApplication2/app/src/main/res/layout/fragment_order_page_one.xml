@@ -181,6 +181,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewFlavorTitle" >
 
         <RadioButton
+            android:id="@+id/chipMocha"
+            android:layout_width="105dp"
+            android:layout_height="55dp"
+            android:text="None"
+            android:textColor="#643200"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="172dp"
+            tools:layout_editor_absoluteY="301dp"
+            />
+
+        <RadioButton
             android:id="@+id/chipVanilla"
             android:layout_width="105dp"
             android:layout_height="55dp"
@@ -224,16 +235,6 @@
             tools:layout_editor_absoluteY="301dp"
             />
 
-        <RadioButton
-            android:id="@+id/chipMocha"
-            android:layout_width="105dp"
-            android:layout_height="55dp"
-            android:text="Mocha"
-            android:textColor="#643200"
-            android:textSize="14sp"
-            tools:layout_editor_absoluteX="172dp"
-            tools:layout_editor_absoluteY="301dp"
-            />
 
         <RadioButton
             android:id="@+id/chipSC"
@@ -263,7 +264,7 @@
             android:id="@+id/chipWM"
             android:layout_width="105dp"
             android:layout_height="55dp"
-            android:text="Whole Milk"
+            android:text="None"
             android:textColor="#643200"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="172dp"
@@ -380,6 +381,17 @@
             />
 
         <RadioButton
+            android:id="@+id/chipReg"
+            android:layout_width="105dp"
+            android:layout_height="55dp"
+            android:text="Espresso"
+            android:textColor="#643200"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="172dp"
+            tools:layout_editor_absoluteY="301dp"
+            />
+
+        <RadioButton
             android:id="@+id/chipDecaf"
             android:layout_width="105dp"
             android:layout_height="55dp"
@@ -387,9 +399,7 @@
             android:textColor="#643200"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="172dp"
-            tools:layout_editor_absoluteY="301dp"
-            />
-
+            tools:layout_editor_absoluteY="301dp" />
 
     </RadioGroup>
 
